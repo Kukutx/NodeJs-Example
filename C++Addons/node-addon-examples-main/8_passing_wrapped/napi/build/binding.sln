@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "addon", "addon.vcxproj", "{5F5494E3-1D56-FE95-85C0-1830E35A3B39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F5494E3-1D56-FE95-85C0-1830E35A3B39}.Release|x64.ActiveCfg = Release|x64
+		{5F5494E3-1D56-FE95-85C0-1830E35A3B39}.Release|x64.Build.0 = Release|x64
+		{5F5494E3-1D56-FE95-85C0-1830E35A3B39}.Debug|x64.ActiveCfg = Debug|x64
+		{5F5494E3-1D56-FE95-85C0-1830E35A3B39}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+electron-packager . app --out BIMapp --arch=x64 --overwrite --ignore=node_modules

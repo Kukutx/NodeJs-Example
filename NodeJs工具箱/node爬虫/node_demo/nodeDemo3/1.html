@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="">
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+    <ul>
+        <li data="https://www.jianshu.com/p/573d50f15deb">mysql入门</li>
+        <li data="https://www.jianshu.com/p/1a4d05ae4d9b">旅行青蛙和黏黏猪</li>
+    </ul>
+    <!--存放文章内容-->
+    <div id="content"></div>
+    <script>
+        var list = document.getElementsByTagName("li");
+        for(let i = 0; i < list.length; i++){
+            list[i].onclick = function(){
+                getArticle(list[i].getAttribute("data"));
+            }
+        }
+        /*getArticle函数封装了根据用户请求文章的url获取文章内容的请求
+        参数url是文章的url，是从li列表的data属性得到的
+        函数的执行的结果是将div content修改
+        */
+        function getArticle(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST","http://localhost:3000",true);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                document.getElementById("content").innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send(url);
+        }
+    </script>
+</body>
+</html>

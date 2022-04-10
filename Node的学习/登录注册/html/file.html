@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="" id="file">
+    <button onclick="doUpload()" id="w">提交</button>
+    <img src="" alt="">
+    
+</body>
+<script>
+    function doUpload()
+    {
+        let file=$('#file').get(0).files[0];   //获取上传的图片
+        let formdata=new FormData();         //创建新的formdata对象   
+        formdata.append('hehe',file)
+        console.log(file);
+        $.ajax({
+            url:'http://localhost:3000/file/upload ',
+            type:'POST',
+            cache:false,
+            data:formdata,
+            processData:false,   
+            contentType:false,
+            success:function(data){
+                console.log(data)
+                if (data.err==0) {
+                    $('img').attr('src',`http://localhost:3000$(data.img)`);
+                }else{
+                    alert('上传失败请重试');
+                }
+            }
+        })
+    }
+</script>
+</html>
